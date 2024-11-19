@@ -1,13 +1,28 @@
-<input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher par adresse">
-
-<div *ngFor="let residence of filteredResidences()">
-    <h2>{{ residence.name }}</h2>
-    <img [src]="residence.image" alt="{{ residence.name }}">
-    <p>Status: {{ residence.status }}</p>
-    <button (click)="showLocation(residence)">Show Location</button>
-    <p *ngIf="residence.showAddress">{{ residence.address }}</p>
-    <span *ngIf="residence.status === 'Disponible'">🟢 Disponible</span>
-    <span *ngIf="residence.status === 'En Construction'">🔧 En Construction</span>
-    <span *ngIf="residence.status === 'Vendu'">🔴 Vendu</span>
-    <button (click)="addToFavorites(residence)">Like</button>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let residence of filteredResidences(); let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ residence.name }}</td>
+            <td><img [src]="residence.image" alt="{{ residence.name }}" style="width: 50px; height: 50px;"></td>
+            <td>
+                <span *ngIf="residence.status === 'Disponible'">🟢 Disponible</span>
+                <span *ngIf="residence.status === 'En Construction'">🔧 En Construction</span>
+                <span *ngIf="residence.status === 'Vendu'">🔴 Vendu</span>
+            </td>
+            <td>
+                <button (click)="showLocation(residence)">Show Location</button>
+                <button (click)="addToFavorites(residence)">Like</button>
+                <p *ngIf="residence.showAddress">{{ residence.address }}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
