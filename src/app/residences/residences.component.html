@@ -9,7 +9,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let residence of filteredResidences(); let i = index">
+        <tr *ngFor="let residence of filteredResidences(); let i = index" [ngClass]="{
+        'table-primary': residence.status === 'Disponible',
+        'table-warning': residence.status === 'En Construction',
+        'table-danger': residence.status === 'Vendu'
+      }">
             <th scope="row">{{ i + 1 }}</th>
             <td>{{ residence.name }}</td>
             <td><img [src]="residence.image" alt="{{ residence.name }}" style="width: 50px; height: 50px;"></td>
@@ -19,9 +23,9 @@
                 <span *ngIf="residence.status === 'Vendu'">🔴 Vendu</span>
             </td>
             <td>
-                <button (click)="showLocation(residence)">Show Location</button>
-                <button (click)="addToFavorites(residence)">Like</button>
-                <p *ngIf="residence.showAddress">{{ residence.address }}</p>
+                <button class="btn-custom-primary" (click)="showLocation(residence)">Show Location</button>
+                <button class="btn-custom-success" (click)="addToFavorites(residence)">Like</button>
+                <p *ngIf="residence.showAddress" class="mt-2">{{ residence.address }}</p>
             </td>
         </tr>
     </tbody>

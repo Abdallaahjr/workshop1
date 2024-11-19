@@ -1,0 +1,96 @@
+/* Style général pour la table */
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+
+/* Style pour les en-têtes de la table */
+
+.table th {
+    font-weight: bold;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+
+/* Style pour les cellules de la table */
+
+.table td,
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+
+/* Style pour les images dans la table */
+
+.table img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Style pour les cartes */
+
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+
+/* Style personnalisé pour les boutons */
+
+.btn-custom-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+    /* Ajoutez cette marge pour espacer les boutons */
+}
+
+.btn-custom-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-custom-success {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom-success:hover {
+    background-color: #1e7e34;
+}
